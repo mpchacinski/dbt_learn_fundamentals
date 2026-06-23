@@ -5,7 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from raw.jaffle_shop.customers
+    from DATAEXPERT_STUDENT.MPCHACINSKI11351.RAW_JS_CUSTOMERS
 
 ),
 
@@ -17,7 +17,7 @@ orders as (
         order_date,
         status
 
-    from raw.jaffle_shop.orders
+    from DATAEXPERT_STUDENT.MPCHACINSKI11351.RAW_JS_ORDERS
 
 ),
 
