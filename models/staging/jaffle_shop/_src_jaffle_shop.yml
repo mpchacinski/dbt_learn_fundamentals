@@ -1,0 +1,14 @@
+sources:
+  - name: jaffle_shop
+    database: DATAEXPERT_STUDENT
+    schema: MPCHACINSKI11351
+    tables:
+      - name: customers
+        identifier: RAW_JS_CUSTOMERS
+      - name: orders
+        identifier: RAW_JS_ORDERS
+        config:
+          freshness:
+            loaded_at_field: _etl_loaded_at
+            warn_after: {count: 24, period: hour}
+            error_after: {count: 48, period: hour}

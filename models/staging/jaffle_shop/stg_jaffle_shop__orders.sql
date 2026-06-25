@@ -5,4 +5,4 @@
         status,
         _etl_loaded_at
 
-    from DATAEXPERT_STUDENT.MPCHACINSKI11351.RAW_JS_ORDERS
+    from {{ source('jaffle_shop', 'orders') }}

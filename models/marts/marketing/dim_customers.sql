@@ -17,6 +17,21 @@ orders as (
 
 ),
 
+customer_orders as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        orders.first_order_date,
+        orders.most_recent_order_date,
+        coalesce(orders.number_of_orders, 0) as number_of_orders
+    from customers
+    left join orders 
+        on customers.customer_id = orders.customer_id
+
+),
+
 
 final as (
 

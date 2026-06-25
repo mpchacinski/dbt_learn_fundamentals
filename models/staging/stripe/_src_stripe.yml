@@ -1,0 +1,12 @@
+sources:
+  - name: stripe
+    database: DATAEXPERT_STUDENT
+    schema: MPCHACINSKI11351
+    tables:
+      - name: payments
+        identifier: RAW_STRIPE_PAYMENTS
+        config:
+          freshness:
+            loaded_at_field: _batched_at
+            warn_after: {count: 24, period: hour}
+            error_after: {count: 48, period: hour}

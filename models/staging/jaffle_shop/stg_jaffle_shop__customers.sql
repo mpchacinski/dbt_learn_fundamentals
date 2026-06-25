@@ -3,4 +3,4 @@
         first_name,
         last_name
 
-    from DATAEXPERT_STUDENT.MPCHACINSKI11351.RAW_JS_CUSTOMERS
+    from {{ source('jaffle_shop', 'customers') }}
