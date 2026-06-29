@@ -1,14 +1,23 @@
 sources:
   - name: jaffle_shop
+    description: "A clone of a PostgreSQL"
     database: DATAEXPERT_STUDENT
     schema: MPCHACINSKI11351
     tables:
       - name: customers
+        description: "The customers table in the jaffle_shop source."
         identifier: RAW_JS_CUSTOMERS
+        columns:
+          - name: id
+            description: "The unique identifier for each customer."
+            data_tests:
+              - not_null
+              - unique
       - name: orders
+        description: "The orders table in the jaffle_shop source."
         identifier: RAW_JS_ORDERS
         config:
           freshness:
             loaded_at_field: _etl_loaded_at
             warn_after: {count: 24, period: hour}
-            error_after: {count: 48, period: hour}
+            error_after: {count: 4800, period: hour}

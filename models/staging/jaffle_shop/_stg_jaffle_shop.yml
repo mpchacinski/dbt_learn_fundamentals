@@ -1,6 +1,6 @@
 models:
   - name: stg_jaffle_shop__customers
-    description: "This model is a staging model for the customers table in the jaffle_shop source."
+    description: "This model is a staging model for the customers table in the jaffle_shop source. One customer per row"
     columns:
       - name: customer_id
         description: "The unique identifier for each customer."
@@ -22,7 +22,7 @@ models:
           - not_null
           - unique
       - name: customer_id
-        description: "The unique identifier for the customer who placed the order."
+        description: "The unique identifier for the customer who placed the order. Foreign key to the customers table."
         data_tests:
           - relationships:
               arguments:
@@ -31,7 +31,7 @@ models:
       - name: order_date
         description: "The date when the order was placed."
       - name: status  
-        description: "The status of the order (e.g., 'completed', 'pending')."
+        description: '{{ doc("order_status") }}'
         data_tests:
           - accepted_values:
               arguments:

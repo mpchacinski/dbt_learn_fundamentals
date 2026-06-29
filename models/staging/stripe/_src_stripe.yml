@@ -1,9 +1,11 @@
 sources:
   - name: stripe
+    description: "An extract from Stripe platform, containing payment information."
     database: DATAEXPERT_STUDENT
     schema: MPCHACINSKI11351
     tables:
       - name: payments
+        description: "The payments table in the stripe source, containing payment transactions."
         identifier: RAW_STRIPE_PAYMENTS
         config:
           freshness:
