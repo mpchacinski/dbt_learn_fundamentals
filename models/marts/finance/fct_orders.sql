@@ -1,9 +1,8 @@
-
 with payments as (
     
     select
         order_id,
-        sum(case when status = 'success' then amount end) as amount
+        sum(case when payment_status = 'success' then payment_amount end) as amount
     from {{ ref('stg_stripe__payments') }}
     group by order_id
 
