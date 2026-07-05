@@ -32,6 +32,10 @@ customer_orders as (
 
 ),
 
+employees as (
+    select * from {{ ref('employees') }}
+),
+
 
 final as (
 
@@ -41,10 +45,13 @@ final as (
         customers.last_name,
         orders.first_order_date,
         orders.most_recent_order_date,
-        coalesce(orders.number_of_orders, 0) as number_of_orders
+        coalesce(orders.number_of_orders, 0) as number_of_orders,
+        employees.employee_id
     from customers
     left join orders 
         on customers.customer_id = orders.customer_id
+    left join employees
+        on customers.customer_id = employees.employee_id
 
 )
 
