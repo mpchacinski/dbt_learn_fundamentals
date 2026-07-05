@@ -1,0 +1,26 @@
+functions:
+  - name: safe_divide
+    description: Safely divides two numbers, returning None if the denominator is zero.
+    arguments:
+      - name: numerator
+        data_type: number
+        description: The numerator for the division.
+      - name: denominator
+        data_type: number
+        description: The denominator for the division.
+    returns:
+      data_type: number
+      description: The result of the division, or None if the denominator is zero.
+
+  - name: create_email
+    description: Creates an email address by concatenating the first name and id with a domain.
+    arguments:
+      - name: first_name
+        data_type: varchar
+        description: The first name of the user.
+      - name: id
+        data_type: number(38, 0)
+        description: The ID of the user.
+    returns:
+      data_type: varchar
+      description: The constructed email address in the format 'first.id@domain'.

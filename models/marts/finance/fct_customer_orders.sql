@@ -33,15 +33,14 @@ customer_order_history as (
                 else 0 
             end) as total_lifetime_value,
 
-        sum(
-            case 
-                when orders.valid_order_date is not null
-                then orders.order_value_dollars
-                else 0 
-            end) 
-            / 
-        nullif(
-            count(case when orders.valid_order_date is not null then 1 end), 0
+        {{ function('safe_divide') }}(
+            sum(
+                case 
+                    when orders.valid_order_date is not null
+                    then orders.order_value_dollars
+                    else 0 
+                end),
+                count(case when orders.valid_order_date is not null then 1 end)
         ) as avg_non_returned_order_value,
 
         array_agg(distinct orders.order_id) as order_ids
