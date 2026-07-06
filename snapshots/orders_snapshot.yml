@@ -1,0 +1,10 @@
+snapshots:
+  - name: orders_snapshot
+    relation: source('jaffle_shop', 'orders')
+    description: "This is a snapshot of the orders table in the jaffle_shop database"
+    config:
+      strategy: check
+      unique_key: id
+      check_cols: ['id', 'user_id', 'order_date', 'status']
+      hard_deletes: ignore
+      dbt_valid_to_current: "to_date('9999-12-31')"
