@@ -1,3 +1,13 @@
+{{
+    config(
+        materialized='incremental',
+        incremental_strategy='merge',
+        unique_key='order_id',
+        on_schema_change='sync_all_columns'
+
+    )
+}}
+
 with payments as (
     
     select
@@ -30,3 +40,6 @@ final as (
 )
 
 select * from final
+{% if is_incremental() %}
+    where final.order_date > (select max(order_date) from {{ this }})
+{% endif %}
