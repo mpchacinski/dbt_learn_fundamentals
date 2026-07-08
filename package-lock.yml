@@ -2,7 +2,13 @@ packages:
 - package: dbt-labs/codegen
   name: codegen
   version: 0.14.1
+- package: brooklyn-data/dbt_artifacts
+  name: dbt_artifacts
+  version: 2.10.1
 - package: dbt-labs/dbt_utils
   name: dbt_utils
+  version: 1.4.1
+- package: gitlabhq/snowflake_spend
+  name: snowflake_spend
   version: 1.4.0
-sha1_hash: dd0bd02612a874f1067c95497cecef67e5023a0b
+sha1_hash: 306a756c9fc0d448c40e657f4b0c747bf8d52277
