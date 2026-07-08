@@ -8,10 +8,6 @@ orders as (
     where payment_status != 'fail'
 ),
 
-ord as (
-    select distinct order_status from {{ ref('stg_jaffle_shop__orders')}}
-),
-
 
 customer_order_history as (
 
