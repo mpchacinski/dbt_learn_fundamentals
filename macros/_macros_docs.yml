@@ -1,0 +1,11 @@
+macros:
+  - name: cents_to_dollars
+    description: |
+      Converts a column in cents to dollars by dividing by 100 and rounding to the specified number of decimal places.
+    arguments:
+      - name: column_name
+        description: The name of the column to convert from cents to dollars.
+        type: string
+      - name: decimals
+        description: The number of decimal places to round the result to. Default is 2.
+        type: integer
