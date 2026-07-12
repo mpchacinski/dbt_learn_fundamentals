@@ -1,0 +1,10 @@
+groups:
+  - name: finance
+    owner:
+      name: John Doe
+      email: john.doe@example.com
+      slack: finance-data
+  - name: product
+    owner:
+      name: Jane Smith
+      email: jane.smith@example.com

@@ -1,0 +1,6 @@
+models:
+  - name: stg_stripe__payments
+    description: This model is a staging table that contains information about Stripe payments, including payment details, customer information, and payment status.
+    config:
+      access: protected
+      group: finance
