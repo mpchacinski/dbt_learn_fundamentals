@@ -1,0 +1,33 @@
+models:
+  - name: fct_orders
+
+exposures:
+  - name: jaffle_shop_weekly_report
+    label: Jaffle Shop Weekly PBI Dashboard
+
+    depends_on:
+      - ref('fct_orders')
+      - ref('fct_customer_orders')
+
+    type: dashboard
+    maturity: high
+
+    owner:
+      name: Joe Doe
+      email: joe.doe@enterprise.com
+
+  - name: customers_data
+    label: customers_data
+    
+    type: notebook
+    maturity: high
+    url: https://tinyurl.com/jaffle-shop-reporting
+    description: 'Exposure for customer metrics'
+
+    depends_on:
+      - ref('dim_customers')
+
+    owner: 
+      name: Jane Dean
+      email: jane.dean@enterprise.com
+      
