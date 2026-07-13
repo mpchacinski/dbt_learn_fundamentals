@@ -5,10 +5,10 @@ packages:
 - package: brooklyn-data/dbt_artifacts
   name: dbt_artifacts
   version: 2.10.1
+- package: tnightengale/dbt_meta_testing
+  name: dbt_meta_testing
+  version: 0.4.0
 - package: dbt-labs/dbt_utils
   name: dbt_utils
   version: 1.4.1
-- package: gitlabhq/snowflake_spend
-  name: snowflake_spend
-  version: 1.4.0
-sha1_hash: 306a756c9fc0d448c40e657f4b0c747bf8d52277
+sha1_hash: 9e7e3f85c0f563cdf79afe391cf88c1e33ef4074

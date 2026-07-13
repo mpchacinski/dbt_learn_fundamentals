@@ -1,3 +1,0 @@
-models:
-  - name: fct_orders
-    description: "This model is a fact table that contains information about orders, including order details, customer information, and payment status."

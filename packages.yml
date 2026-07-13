@@ -5,3 +5,5 @@ packages:
     version: 1.4.1
   - package: brooklyn-data/dbt_artifacts
     version: 2.10.1
+  - package: tnightengale/dbt_meta_testing
+    version: 0.4.0

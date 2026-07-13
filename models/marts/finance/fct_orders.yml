@@ -1,0 +1,18 @@
+models:
+  - name: fct_orders
+
+exposures:
+  - name: jaffle_shop_weekly_report
+    label: Jaffle Shop Weekly PBI Dashboard
+
+    depends_on:
+      - ref('fct_orders')
+      - ref('fct_customer_orders')
+
+    type: dashboard
+    maturity: high
+
+    owner:
+      name: Joe Doe
+      email: jd@js.com
+      
